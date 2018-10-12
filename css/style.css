@@ -1,0 +1,67 @@
+footer {
+  background-color: red;
+  height: 100px;
+}
+
+header {
+  text-align: center;
+  background-color: blue;
+  height: 150px;
+}
+
+main {
+  background-color: green;
+  height: 600px;
+}
+main section {
+  display: flex;
+  flex-direction: column;
+  background-color: pink;
+  height: 600px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+main .row1 {
+  display: flex;
+}
+main .row1 div {
+  height: 100px;
+  width: 79px;
+}
+main .row2 {
+  display: flex;
+}
+main .row2 div {
+  height: 100px;
+  width: 79px;
+}
+main .row3 {
+  display: flex;
+}
+main .row3 div {
+  height: 100px;
+  width: 79px;
+}
+main .row4 {
+  display: flex;
+}
+main .row4 div {
+  height: 100px;
+  width: 79px;
+}
+main .row5 {
+  display: flex;
+}
+main .row5 div {
+  height: 100px;
+  width: 79px;
+}
+main .row6 {
+  display: flex;
+}
+main .row6 div {
+  height: 100px;
+  width: 79px;
+}
+
+/*# sourceMappingURL=style.css.map */

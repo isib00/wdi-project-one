@@ -1,0 +1,55 @@
+main {
+  background-color: green;
+  height: 600px;
+  section {
+    display:flex;
+    flex-direction: column;
+    background-color: pink;
+    height: 600px;
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+  .row1 {
+    display: flex;
+    div {
+      height: 100px;
+      width: 79px;
+    }
+  }
+  .row2 {
+    display: flex;
+    div {
+      height: 100px;
+      width: 79px;
+    }
+  }
+  .row3 {
+    display: flex;
+    div {
+      height: 100px;
+      width: 79px;
+    }
+  }
+  .row4 {
+    display: flex;
+    div {
+      height: 100px;
+      width: 79px;
+    }
+  }
+  .row5 {
+    display: flex;
+    div {
+      height: 100px;
+      width: 79px;
+    }
+  }
+  .row6 {
+    display: flex;
+    div {
+      height: 100px;
+      width: 79px;
+    }
+  }
+
+}

@@ -1,17 +1,23 @@
 footer {
-  background-color: red;
   height: 100px;
 }
 
 header {
   text-align: center;
-  background-color: blue;
+  height: 150px;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 150px;
 }
 
 main {
-  background-color: green;
   height: 600px;
+  display: flex;
+  justify-content: center;
 }
 main section {
   display: flex;
@@ -27,6 +33,7 @@ main .row1 {
 main .row1 div {
   height: 100px;
   width: 79px;
+  border: solid black 2px;
 }
 main .row2 {
   display: flex;
@@ -34,6 +41,7 @@ main .row2 {
 main .row2 div {
   height: 100px;
   width: 79px;
+  border: solid black 2px;
 }
 main .row3 {
   display: flex;
@@ -41,6 +49,7 @@ main .row3 {
 main .row3 div {
   height: 100px;
   width: 79px;
+  border: solid black 2px;
 }
 main .row4 {
   display: flex;
@@ -48,6 +57,7 @@ main .row4 {
 main .row4 div {
   height: 100px;
   width: 79px;
+  border: solid black 2px;
 }
 main .row5 {
   display: flex;
@@ -55,11 +65,18 @@ main .row5 {
 main .row5 div {
   height: 100px;
   width: 79px;
+  border: solid black 2px;
 }
 main .row6 {
   display: flex;
 }
 main .row6 div {
+  height: 100px;
+  width: 79px;
+  border: solid black 2px;
+}
+
+img {
   height: 100px;
   width: 79px;
 }

@@ -64,10 +64,11 @@ const arrayAllCards = [Card1, Card2, Card3, Card4, Card5, Card6, Card7, Card8,
 const allCards = document.getElementsByTagName('img');
 
 function checkForPairs() {
-  const boxNumberOfClickedCard = event.target.Card.boxNumber;
+// return  let boxNumberOfClickedCard = event.target;
+console.log('This is the  the clicked card ' , event.target);
+
 }
 
-console.log('This is the box number of the clicked card ' , boxNumberOfClickedCard);
 
 
 arrayAllCards.forEach( function () {

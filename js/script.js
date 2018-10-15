@@ -64,9 +64,13 @@ const arrayAllCards = [Card1, Card2, Card3, Card4, Card5, Card6, Card7, Card8,
 const allCards = document.getElementsByTagName('img');
 
 function checkForPairs() {
-// return  let boxNumberOfClickedCard = event.target;
-console.log('This is the  the clicked card ' , event.target);
-
+return  const boxNumberOfClickedCard1 = event.target.Card.boxNumber;
+console.log('This is the  the clicked card ' , boxNumberOfClickedCard1);
+//HEY ELLIE/MATT : I WANT TO STORE THE BOXNUMBER OF THE CARD THAT I CLICKED ON
+//IN A CONST, SO THAT I CAN COMPARE IT TO THE BOXNUMBER OF THE SECOND CARD that
+// I HAVE CLICKED ON. THE BOXNUMBER IS A PROPERTY OF THE CARD OBJECT, SO I have
+// HAVE TRIED TO USE EVENT.TARGET AND CARD.BOXNUMBER, BUT IT DIDN'T WORK. CAN you
+// MAYBE HELP ME WITH THAT?
 }
 
 
@@ -75,6 +79,14 @@ arrayAllCards.forEach( function () {
   return  allCards.addEventListener('click', checkForPairs);
 });
 
+
+if (boxNumberOfClickedCard1 === boxNumberOfClickedCard2) {
+  alert('You have found a pair!');
+  event.target.style.color = white;
+  event.target.
+} else {
+  alert('This is not a pair :( try again');
+}
 
 
 

@@ -7,78 +7,36 @@ header {
   height: 150px;
 }
 
-h1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 150px;
-}
-
 main {
+
   height: 600px;
-  display: flex;
-  justify-content: center;
 }
 main section {
   display: flex;
   flex-direction: column;
-  background-color: pink;
   height: 600px;
   margin-left: 200px;
   margin-right: 200px;
 }
-main .row1 {
-  display: flex;
-}
-main .row1 div {
+
+img.front, img.back {
   height: 100px;
   width: 79px;
-  border: solid black 2px;
-}
-main .row2 {
-  display: flex;
-}
-main .row2 div {
-  height: 100px;
-  width: 79px;
-  border: solid black 2px;
-}
-main .row3 {
-  display: flex;
-}
-main .row3 div {
-  height: 100px;
-  width: 79px;
-  border: solid black 2px;
-}
-main .row4 {
-  display: flex;
-}
-main .row4 div {
-  height: 100px;
-  width: 79px;
-  border: solid black 2px;
-}
-main .row5 {
-  display: flex;
-}
-main .row5 div {
-  height: 100px;
-  width: 79px;
-  border: solid black 2px;
-}
-main .row6 {
-  display: flex;
-}
-main .row6 div {
-  height: 100px;
-  width: 79px;
-  border: solid black 2px;
+  position: absolute;
 }
 
-img {
+.row div {
   height: 100px;
   width: 79px;
 }
 
+.row {
+  display: flex;
+  width: 500px;
+  height: 125px;
+}
+
+.card .flipped {
+  z-index: -1;
+}
 /*# sourceMappingURL=style.css.map */

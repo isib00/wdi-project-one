@@ -2,6 +2,22 @@ footer {
   height: 100px;
 }
 
+body {
+  background-color: rgba(0, 53, 92, 1);
+}
+
+h1 {
+  color: rgba(108, 197, 255, 1);
+  font-size: 65px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+p {
+  color: rgba(108, 197, 255, 1);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 25px;
+}
+
 header {
   text-align: center;
   height: 150px;
@@ -38,5 +54,15 @@ img.front, img.back {
 
 .card .flipped {
   z-index: -1;
+}
+
+#grid {
+  width: 511px;
+  height: 700px;
+  margin: 0 auto;
+}
+
+.found {
+  background-color: white;
 }
 /*# sourceMappingURL=style.css.map */

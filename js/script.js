@@ -51,16 +51,16 @@ const Card40 = new Card(19);
 const Card41 = new Card(20);
 const Card42 = new Card(20);
 
-
+//CREATE ARRAY OF ALL CARDS
 const arrayAllCards = [];
 
-// NOTE: Rob made this. Do I understand it????
-// ===========================================
 for (let i = 0; i < 21; i++ ) {
   arrayAllCards.push(new Card(i));
   arrayAllCards.push(new Card(i));
 }
+console.log(arrayAllCards);
 
+//CREATE GRID
 const columnCount = 7;
 const rowCount = 6;
 for (let row = 0; row < rowCount; row++ ) {
@@ -87,7 +87,7 @@ function buildDomElement(card) {
   frontImg.setAttribute('src', `ImagesMemoryGame/${card.boxNumber + 1}.jpg`);
   frontImg.className = 'front';
   div.appendChild(frontImg);
-  // Card back
+  // Card back:
   const backImg = document.createElement('img');
   backImg.setAttribute('src', 'ImagesMemoryGame/back.jpg');
   backImg.className = 'back';
@@ -96,7 +96,7 @@ function buildDomElement(card) {
   return div;
 }
 
-
+let cardsInPlay = [];
 let cardsclicked = 0;
 let firstCard;
 let secondCard;
@@ -104,52 +104,64 @@ let secondCard;
 function handleCardBackClick(event) {
   cardsclicked++;
   const clickedElement = event.target;
-  // clickedElement.classList.add('flipped');
+  clickedElement.classList.add('flipped');
+  cardsInPlay.push(clickedElement);
+  console.log(cardsInPlay);
   const cardNumber = clickedElement.parentElement.getAttribute('card-number');
   if (cardsclicked === 1) {
     firstCard = cardNumber;
+    // clickedElement.classList.remove('flipped');
   } else if (cardsclicked === 2) {
     secondCard = cardNumber;
     // } else if (cardsclicked > 2) {
     //   clickedElement.removeEventListener();
     // }
     checkForPairs();
+    // cardsclicked = 0;
+    // cardsInPlay = [];
+
   }
 
+}
+let score = 0;
+const scoreBoard = document.querySelector('.score');
+scoreBoard.innerHTML = score;
 
+function checkForPairs() {
+  console.log(firstCard , secondCard);
+  if (firstCard === secondCard) {
+    console.log('You have found a pair!');
+    cardsInPlay.forEach(card => {
+      cardsOutOfGame.push(card);
+      card.style.opacity = 0;
+      console.log('these are the found cards' , cardsOutOfGame);
 
-  // ==========================================
+    });
+    score++;
+    scoreBoard.innerHTML = score;
+    checkForEndOfGame();
+    cardsInPlay = [];
+    cardsclicked = 0;
+  } else {
+    console.log('This is not a pair. Try again!');
+    setTimeout(() =>  {
+      cardsInPlay.forEach(card => {
+        console.log('this is the card' , card);
+        card.classList.remove('flipped');
 
-  function checkForPairs() {
-    if (firstCard === secondCard) {
-      alert('You have found a pair!');
-      firstCard.classList.add('found');
-      secondCard.classList.add('found');
-      removeFoundCards();
-      checkForEndOfGame();
-    } else {
-      alert('This is not a pair. Try again!');
-    }
+      });
+      cardsInPlay = [];
+      cardsclicked = 0;
+    },1000);
+
   }
+}
 
 const cardsOutOfGame = [];
 
-  function removeFoundCards() {
-    if (firstCard.hasClass('found')) {
-      firstCard.removeEventListener();
-      firstCard.style.backgroundColor = 'white';
-      cardsOutOfGame.push(firstCard);
-    }
-    if (secondCard.hasClass('found')) {
-      secondCard.removeEventListener();
-      secondCard.style.backgroundColor = 'white';
-      cardsOutOfGame.pudh(secondCard);
-    }
-  }
 
-  function checkForEndOfGame() {
-    if (cardsOutOfGame.length === 41) {
-      alert('The game is over. You have found all of the pairs!');
-    }
+function checkForEndOfGame() {
+  if (cardsOutOfGame.length === 41) {
+    alert('The game is over. You have found all of the pairs!');
   }
 }

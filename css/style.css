@@ -16,40 +16,44 @@ p {
   color: rgba(108, 197, 255, 1);
   font-family: 'Roboto Mono', monospace;
   font-size: 25px;
+  text-align: center;
+}
+
+.stopwatch {
+    color: rgba(108, 197, 255, 1);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
 }
 
 header {
   text-align: center;
-  height: 150px;
+  height: 100px;
 }
 
 main {
-
   height: 600px;
 }
 main section {
   display: flex;
   flex-direction: column;
-  height: 600px;
-  margin-left: 200px;
-  margin-right: 200px;
 }
 
 img.front, img.back {
-  height: 100px;
-  width: 79px;
+  height: 200px;
+  width: 160px;
   position: absolute;
 }
 
 .row div {
-  height: 100px;
-  width: 79px;
+  height: 250px;
+  width: 200px;
 }
 
 .row {
   display: flex;
-  width: 500px;
-  height: 125px;
+  width: 1300px;
+  height: 250px;
+  margin: 0 auto;
 }
 
 .card .flipped {
@@ -57,12 +61,16 @@ img.front, img.back {
 }
 
 #grid {
-  width: 511px;
-  height: 700px;
-  margin: 0 auto;
+  width: 700px;
+  /* height: 1400px; */
+  margin: 80px;
+  display: flex;
+
 }
 
 .found {
   background-color: white;
 }
+
+
 /*# sourceMappingURL=style.css.map */

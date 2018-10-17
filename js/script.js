@@ -89,7 +89,7 @@ function buildDomElement(card) {
   div.appendChild(frontImg);
   // Card back:
   const backImg = document.createElement('img');
-  backImg.setAttribute('src', 'ImagesMemoryGame/back.jpg');
+  backImg.setAttribute('src', 'ImagesMemoryGame/back image bearbeitet.jpg');
   backImg.className = 'back';
   backImg.addEventListener('click', handleCardBackClick);
   div.appendChild(backImg);
@@ -110,15 +110,12 @@ function handleCardBackClick(event) {
   const cardNumber = clickedElement.parentElement.getAttribute('card-number');
   if (cardsclicked === 1) {
     firstCard = cardNumber;
-    // clickedElement.classList.remove('flipped');
+
   } else if (cardsclicked === 2) {
     secondCard = cardNumber;
-    // } else if (cardsclicked > 2) {
-    //   clickedElement.removeEventListener();
-    // }
+
     checkForPairs();
-    // cardsclicked = 0;
-    // cardsInPlay = [];
+
 
   }
 
@@ -163,5 +160,37 @@ const cardsOutOfGame = [];
 function checkForEndOfGame() {
   if (cardsOutOfGame.length === 41) {
     alert('The game is over. You have found all of the pairs!');
+    clearInterval()
   }
+}
+
+
+
+
+
+
+
+
+
+
+//Stopwatch:
+
+const timer = document.querySelector('.timer');
+console.log('this is the timer' , timer);
+
+
+let minutes = 0;
+let seconds = 0;
+
+const stopWatch = setInterval(() => {
+  seconds++;
+  if (seconds === 60) {
+    minutes++;
+    seconds = 0;
+  }
+  timer.innerHTML = `${formatNumber(minutes)}:${formatNumber(seconds)}`;
+},1000);
+
+function formatNumber(num) {
+  return num < 10 ? `0${num}` : num;
 }

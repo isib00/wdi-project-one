@@ -1,5 +1,3 @@
-//MVP:
-
 class Card {
   constructor(boxNumber) {
     this.boxNumber = boxNumber;
@@ -106,23 +104,19 @@ function handleCardBackClick(event) {
   const clickedElement = event.target;
   clickedElement.classList.add('flipped');
   cardsInPlay.push(clickedElement);
-  console.log(cardsInPlay);
   const cardNumber = clickedElement.parentElement.getAttribute('card-number');
   if (cardsclicked === 1) {
     firstCard = cardNumber;
-
   } else if (cardsclicked === 2) {
     secondCard = cardNumber;
-
     checkForPairs();
-
-
   }
-
 }
+
 let score = 0;
 const scoreBoard = document.querySelector('.score');
 scoreBoard.innerHTML = score;
+const cardsOutOfGame = [];
 
 function checkForPairs() {
   console.log(firstCard , secondCard);
@@ -131,8 +125,9 @@ function checkForPairs() {
     cardsInPlay.forEach(card => {
       cardsOutOfGame.push(card);
       card.style.opacity = 0;
-      console.log('these are the found cards' , cardsOutOfGame);
-
+      console.log('these are the found cards in cardsOutOfGame' , cardsOutOfGame);
+      const sound = document.querySelector('.sound');
+      sound.play();
     });
     score++;
     scoreBoard.innerHTML = score;
@@ -145,39 +140,25 @@ function checkForPairs() {
       cardsInPlay.forEach(card => {
         console.log('this is the card' , card);
         card.classList.remove('flipped');
-
       });
       cardsInPlay = [];
       cardsclicked = 0;
-    },1000);
-
+    },700);
   }
 }
-
-const cardsOutOfGame = [];
-
 
 function checkForEndOfGame() {
-  if (cardsOutOfGame.length === 41) {
+  if (cardsOutOfGame.length === 42) {
     alert('The game is over. You have found all of the pairs!');
-    clearInterval()
+    const playTime = stopWatch;
+    clearInterval(stopWatch);
+    scoreBoard.innerHTML = `Congratulations! It took you ${playTime}`;
   }
 }
-
-
-
-
-
-
-
-
-
 
 //Stopwatch:
 
 const timer = document.querySelector('.timer');
-console.log('this is the timer' , timer);
-
 
 let minutes = 0;
 let seconds = 0;

@@ -151,19 +151,18 @@ const scoreBoard2 = document.querySelector('.scores');
 
 function checkForEndOfGame() {
   if (cardsOutOfGame.length === 42) {
-    const playTime = stopWatch;
+    // const playTime = stopWatch;
     clearInterval(stopWatch);
-    scoreBoard2.innerHTML = `Congratulations! It took you ${playTime}`;
+    scoreBoard2.innerHTML = 'Congratulations! ';
     scoreBoard2.style.color = 'rgba(108, 197, 255, 1)';
-    scoreBoard2.sytle.fontSize = "25px";
-    scoreBoard2.style.textAlign= "center";
+    scoreBoard2.sytle.fontSize = '25px';
+    scoreBoard2.style.textAlign= 'center';
   }
 }
 
 //Stopwatch:
 
 const timer = document.querySelector('.timer');
-
 let minutes = 0;
 let seconds = 0;
 

@@ -147,12 +147,16 @@ function checkForPairs() {
   }
 }
 
+const scoreBoard2 = document.querySelector('.scores');
+
 function checkForEndOfGame() {
   if (cardsOutOfGame.length === 42) {
-    alert('The game is over. You have found all of the pairs!');
     const playTime = stopWatch;
     clearInterval(stopWatch);
-    scoreBoard.innerHTML = `Congratulations! It took you ${playTime}`;
+    scoreBoard2.innerHTML = `Congratulations! It took you ${playTime}`;
+    scoreBoard2.style.color = 'rgba(108, 197, 255, 1)';
+    scoreBoard2.sytle.fontSize = "25px";
+    scoreBoard2.style.textAlign= "center";
   }
 }
 
